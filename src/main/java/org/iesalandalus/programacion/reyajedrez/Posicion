@@ -7,7 +7,7 @@ public class Posicion{
     {
         return fila;
     }
-    public String setFila(String nuevaFila)
+    private String setFila(int nuevaFila)
     {
       
         if(nuevafila < 1 || nuevafila > 8) //Lanza la exception si las fila no es correcta
@@ -25,9 +25,10 @@ public class Posicion{
     {
         return columna;
     }
-    public void setColumna(char nuevaColumna)
+    private void setColumna(char nuevaColumna)
     {
         if(!nuevaColumna.equals("a") && !nuevaColumna.equals("b") && !nuevaColumna.equals("c") && !nuevaColumna.equals("d") && !nuevaColumna.equals("e") && !nuevaColumna.equals("f") && !nuevaColumna.equals("g") && !nuevaColumna.equals("h"))
+        {
             throw new IllegalArgumentException("La columna debe estar entre a y h.");
         }
         else
@@ -35,5 +36,11 @@ public class Posicion{
             this.columna = nuevaColumna;
         }
        
+    }
+    //llama a los metodos Set y pasa el nuevo valor
+    public void Posicion(int nuevaFila, char nuevaColumna)
+    {
+        setFila(nuevaFila);
+        setColumna(nuevaColumna);
     }
 }
