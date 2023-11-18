@@ -2,4 +2,38 @@ public class Posicion{
     private int fila;
     private char columna;
 
+
+    public String getFila() 
+    {
+        return fila;
+    }
+    public String setFila(String nuevaFila)
+    {
+      
+        if(nuevafila < 1 || nuevafila > 8) //Lanza la exception si las fila no es correcta
+        {
+            throw new IllegalArgumentException("La fila debe estar entre 1 y 8.");
+        }
+        else
+        {
+            this.fila = nuevafila;
+        }
+      
+    }
+
+    public char getColumna()
+    {
+        return columna;
+    }
+    public void setColumna(char nuevaColumna)
+    {
+        if(!nuevaColumna.equals("a") && !nuevaColumna.equals("b") && !nuevaColumna.equals("c") && !nuevaColumna.equals("d") && !nuevaColumna.equals("e") && !nuevaColumna.equals("f") && !nuevaColumna.equals("g") && !nuevaColumna.equals("h"))
+            throw new IllegalArgumentException("La columna debe estar entre a y h.");
+        }
+        else
+        {
+            this.columna = nuevaColumna;
+        }
+       
+    }
 }
